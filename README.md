@@ -13,7 +13,7 @@ A production-ready, expert-level `docker-compose` setup for **n8n**. This templa
 
 - 🛠 **Dual Setup**: Switch between Local Dev and Production in seconds.
 - 🔒 **Auto-SSL**: Built-in Traefik reverse proxy with Let's Encrypt integration.
-- 🐘 **Enterprise Database**: Uses PostgreSQL (16) instead of SQLite for maximum stability.
+- 🐘 **Enterprise Database**: Uses **SQLite** for local development (zero-config, high-performance) and **PostgreSQL (16)** for production.
 - 🛡 **Security First**: Environment-variable driven configuration with secure internal networking.
 - 🚀 **One-Click Fix**: Includes a recovery script for local volume/key conflicts.
 
@@ -31,9 +31,9 @@ graph TD
 
 ---
 
-## 💻 Quick Start (Local Development)
+## 💻 Quick Start (Happy Local Dev)
 
-Run n8n on your laptop without needing a domain or SSL.
+Run n8n on your laptop with **SQLite** for a fast, lightweight experience.
 
 1.  **Clone & Prepare**:
     ```bash
@@ -46,7 +46,7 @@ Run n8n on your laptop without needing a domain or SSL.
 3.  **Access**: Open [http://localhost:5679](http://localhost:5679)
 
 > [!TIP]
-> If you encounter "Connection Refused", simply run `.\fix_local.ps1` in PowerShell.
+> This setup uses SQLite locally to save RAM and avoid database permission headaches. Production still uses robust PostgreSQL.
 
 ---
 

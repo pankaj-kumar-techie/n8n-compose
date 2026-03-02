@@ -7,7 +7,7 @@ docker compose -f docker-compose.local.yml down
 
 # 2. Clean Volumes (to fix encryption key mismatch)
 Write-Host "Cleaning conflicting volumes..."
-docker volume rm n8n-compose_n8n_data n8n-compose_postgres_data -ErrorAction SilentlyContinue
+docker volume rm n8n-compose_n8n_local_data -ErrorAction SilentlyContinue
 
 # 3. Start services
 Write-Host "Starting fresh local setup..."
