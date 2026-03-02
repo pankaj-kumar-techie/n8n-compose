@@ -2,7 +2,6 @@ version: "3.8"
 
 volumes:
   n8n_local_data:
-  ollama_local_data:
 
 
 networks:
@@ -10,15 +9,6 @@ networks:
 
 
 services:
-  ollama:
-    image: ollama/ollama:latest
-    container_name: ${COMPOSE_PROJECT_NAME:-n8n}-local-ollama
-    restart: always
-    volumes:
-      - ollama_local_data:/root/.ollama
-    networks:
-      - n8n-net
-
   n8n:
     image: docker.n8n.io/n8nio/n8n:${N8N_VERSION:-latest}
     restart: always
@@ -41,5 +31,3 @@ services:
       - n8n_local_data:/home/node/.n8n
     networks:
       - n8n-net
-    depends_on:
-      - ollama
